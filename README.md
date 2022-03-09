@@ -1,1 +1,20 @@
 # Obesity_Level_Classification
+Obesity has become more and more epidemic in every country of the world that leads to serious consequences for people of all ages. It has been shown that obesity can be considered a disease that mainly relates to multiple factors such as food type consumption, physical conditions, and family history of obesity, etc. This projecyt  develops an Sequential Model, used to predict obesity levels in individuals from Colombia, Mexico, and Peru, based on a dataset provided by UCI Machine Learning repository, that contains the data obesity levels based on their eating habits and physical conditions.
+# Dataset
+The data was collected from https://archive.ics.uci.edu/ml/datasets/Estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition+
+The data contains 17 attributes and 2111 records, the records are labeled with the class variable NObesity(Obesity Level), that allows classification of the data using the values of Insufficient Weight, Normal Weight, Overweight Level I, Overweight Level II, Obesity Type I, Obesity Type II and Obesity Type III. 77% of the data was generated synthetically using the Weka tool and the SMOTE filter, 23% of the data was collected directly from users through a web platform. This data can be used to generate intelligent computational tools to identify the obesity level of an individual and to build recommender systems that monitor obesity levels.
+# Data preprocessing and Data Exploration
+- A bigger proportion of female with a large slice of Obesity Type III in the pie chart below, while Obesity Type II is the most prevalent type of obesity in male. Interestingly, there is also a higher proportion of Insufficient Weight in female compared to male, this could be explained by a heavier societal pressure on women to go on diets.
+![image](https://user-images.githubusercontent.com/52012182/157352510-2548fa4e-dcca-46ae-b143-1c56c724da28.png)
+- There is a direct relation between Height and Weight
+![image](https://user-images.githubusercontent.com/52012182/157352960-ae43d936-6bff-46b8-85a6-49ee20b83cad.png)
+- Feature selection. The features we decided to work with, are: Weight, Age, Height, Frequency of consumption of vegetables are the most 4 important features.
+
+![image](https://user-images.githubusercontent.com/52012182/157353945-05aeba33-dbc1-4646-9e59-748c6fc940e8.png)
+# Approach
+To perform the prediction, we use the artificial neural networks (ANN) as our baseline model since it is being used widely in healthcare as predictive models as it achieves high accuracy results when dealing with larger training datasets at great speeds, and it have applications in nearly all departments of a hospital, especially in the fields such as cancer diagnosis and cardiac arrhythmias. In ANN, the neurons are typically organized into multiple layers. Neurons of on layer connect only to neurons of the immediately preceding and immediately following layers. The training data are inputted in the first layer called input layer. The layer that produces the ultimate result is the output layer. And there are one or multiple hidden layers between the input and output layers, where a group of neurons in one layer connect to a single neuron in the next layer. The architecture of ANN is represented below.
+![image](https://user-images.githubusercontent.com/52012182/157363424-986e6987-0c43-4817-a4a1-fb0a3bbbab77.png)
+# Results
+With the Artificial Neural Networks, sequential model. After 500 epochs, using as optimizer the “Adam Optimizer”, changing the learning rate parameter, our evaluation method was testing the accuracy of the model. We divided the evaluation of the model in two parts: a) testing the accuracy of the training data, b) testing the accuracy of the test data. The results were pretty accurate, 99% and 96% of accuracy, respectively.
+![image](https://user-images.githubusercontent.com/52012182/157364287-c2cfb62b-a727-436a-ad3b-12f24e5f8eb6.png)
+![image](https://user-images.githubusercontent.com/52012182/157364375-e5f009e9-da11-41e5-b134-aa6477c285d0.png)
